@@ -1,20 +1,34 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <v-container fluid>
     <v-row>
       <v-col>
-        <v-card color="grey-lighten-4" flat>
+        <v-card flat>
           <v-toolbar density="compact">
             <v-toolbar-title style="cursor: pointer" @click="$router.push('/')">
               Wordle Mind Bender <v-icon icon="mdi-head-heart"></v-icon>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn to="/" class="ml-2"> Home </v-btn>
-            <v-btn to="/about" class="ml-2"> About </v-btn>
-            <v-btn to="/game" class="ml-2"> Game </v-btn>
+            <v-menu location="bottom">
+              <template v-slot:activator="{ props }">
+                <v-btn k v-bind="props"> <v-icon icon="mdi-menu" size="x-large"></v-icon> </v-btn>
+              </template>
+
+              <v-list flat>
+                <v-list-item>
+                  <v-btn variant="plain" to="/"> Home </v-btn>
+                </v-list-item>
+                <v-list-item>
+                  <v-btn variant="plain" to="/about"> About </v-btn>
+                </v-list-item>
+                <v-list-item>
+                  <v-btn variant="plain" to="/game"> Game </v-btn>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </v-toolbar>
         </v-card>
       </v-col>
