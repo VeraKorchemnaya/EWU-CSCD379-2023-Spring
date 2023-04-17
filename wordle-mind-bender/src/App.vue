@@ -4,7 +4,7 @@ import { ref } from 'vue'
 import { useTheme } from 'vuetify'
 
 const theme = useTheme()
-const myThemes = ['light', 'dark', 'dark_2', 'zesty_citrus']
+const myThemes = ['light', 'dark', 'dark_night', 'zesty_citrus']
 const selectedTheme = ref(myThemes[0])
 
 const setTheme = () => {

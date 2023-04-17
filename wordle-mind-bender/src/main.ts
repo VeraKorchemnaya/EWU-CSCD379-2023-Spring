@@ -11,7 +11,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-const dark_2 = {
+const dark_night = {
   dark: true,
   colors: {
     background: '#15202b',
@@ -47,7 +47,7 @@ const vuetify = createVuetify({
   theme: {
     defaultTheme: 'light',
     themes: {
-      dark_2,
+      dark_night,
       zesty_citrus
     }
   }
