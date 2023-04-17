@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - Assignment-1
+      - Assignment-2
     paths:
       - wordle-mind-bender/**
   pull_request:
