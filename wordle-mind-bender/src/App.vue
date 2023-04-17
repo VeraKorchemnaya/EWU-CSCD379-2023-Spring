@@ -1,5 +1,16 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { ref } from "vue"
+import { useTheme } from "vuetify"
+
+const theme = useTheme()
+const myThemes = ["light", "dark", "dark_2", "zesty_citrus"]
+const selectedTheme = ref(myThemes[0])
+
+const setTheme = () => {
+  theme.global.name.value = selectedTheme.value
+  console.log(selectedTheme.value)
+}
 </script>
 
 <template>
@@ -7,7 +18,7 @@ import { RouterView } from 'vue-router'
     <v-row>
       <v-col>
         <v-card flat>
-          <v-toolbar density="compact">
+          <v-toolbar density="compact" color="primary">
             <v-toolbar-title style="cursor: pointer" @click="$router.push('/')">
               Wordle Mind Bender <v-icon icon="mdi-head-heart"></v-icon>
             </v-toolbar-title>
@@ -32,7 +43,7 @@ import { RouterView } from 'vue-router'
               
             <v-dialog
               transition="dialog-bottom-transition"
-              width="auto"
+              width="30rem"
             >
               <template v-slot:activator="{ props }">
                 <v-btn
@@ -45,7 +56,12 @@ import { RouterView } from 'vue-router'
                     title="Settings"
                   ></v-toolbar>
                   <v-card-text>
-                    <div class="text-h2 pa-12">Hello world!</div>
+                    <v-select
+                    label="Select Theme"
+                    v-model="selectedTheme"
+                    :items="myThemes"
+                    @update:modelValue="setTheme()"
+                  ></v-select>
                   </v-card-text>
                   <v-card-actions class="justify-end">
                     <v-btn
@@ -56,8 +72,6 @@ import { RouterView } from 'vue-router'
                 </v-card>
               </template>
             </v-dialog>
-
-
           </v-toolbar>
         </v-card>
       </v-col>
@@ -69,4 +83,3 @@ import { RouterView } from 'vue-router'
     </v-row>
   </v-container>
 </template>
-
