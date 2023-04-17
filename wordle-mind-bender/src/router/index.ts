@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: '/game',
       name: 'game',
-        component: Wordle
+      component: Wordle
     }
   ]
 })
