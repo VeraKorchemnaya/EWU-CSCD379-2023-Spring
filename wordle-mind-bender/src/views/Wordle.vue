@@ -1,10 +1,8 @@
 <template>
-  <v-row>
-    <v-col>
-      <v-card flat class="mx-auto" style="width: 500px">
+    <v-card flat class="mx-auto" style="width: 500px">
         <v-card-title class="text-center text-h4 font-weight-bold">Wordle Mind Bender</v-card-title>
-        <v-card-text>
-          <v-row v-for="word in game.guesses" :key="word.text">
+        <v-card-text class="mt-2">
+          <v-row v-for="word in game.guesses" :key="word.text" class="mx-auto">
             <v-col v-for="letter in word.letters" :key="letter.char">
               <v-btn class="ps-0 pe-0" :color="letter.color" flat>
                 {{ letter.char }}
@@ -28,8 +26,6 @@
           <v-btn disabled>Secret: {{ game.secretWord }}</v-btn>
         </v-card-actions>
       </v-card>
-    </v-col>
-  </v-row>
 </template>
 
 <script setup lang="ts">
