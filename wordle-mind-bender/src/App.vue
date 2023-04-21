@@ -18,7 +18,7 @@ const setTheme = () => {
     <v-row>
       <v-col>
         <v-card flat>
-          <v-toolbar density="compact" color="primary">
+          <v-toolbar density="compact">
             <v-toolbar-title style="cursor: pointer" @click="$router.push('/')">
               Wordle Mind Bender <v-icon icon="mdi-head-heart"></v-icon>
             </v-toolbar-title>
@@ -66,6 +66,7 @@ const setTheme = () => {
         </v-card>
       </v-col>
     </v-row>
+
     <v-row>
       <v-col>
         <RouterView />
