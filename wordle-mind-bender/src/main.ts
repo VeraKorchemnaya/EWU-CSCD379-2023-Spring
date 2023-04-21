@@ -47,22 +47,9 @@ const OceanMistDark = {
     correct: '#032dff',
     misplaced: '#1683f7',
     wrong: '#5c86ab',
-    notGuessed: '#91a6ba'
+    notGuessed: '#abbdcf'
   }
 }
-
-// const zesty_citrus = {
-//   dark: false,
-//   colors: {
-//     primary: '#ffc107',
-//     secondary: '#ff9800',
-//     accent: '#ff5722',
-//     error: '#f44336',
-//     warning: '#e91e63',
-//     info: '#9c27b0',
-//     success: '#673ab7'
-//   }
-// }
 
 const vuetify = createVuetify({
   components,
@@ -74,7 +61,7 @@ const vuetify = createVuetify({
     }
   },
   theme: {
-    defaultTheme: 'light',
+    defaultTheme: 'dark',
     themes: {
       MossyWoodland,
       MossyWoodlandLight,
