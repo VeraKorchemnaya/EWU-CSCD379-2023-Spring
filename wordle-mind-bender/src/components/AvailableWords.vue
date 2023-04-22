@@ -37,6 +37,10 @@ const items = [
   {
     title: 'Item #3',
     value: 3
+  },
+  {
+    title: 'Item #4',
+    value: 4
   }
 ]
 
