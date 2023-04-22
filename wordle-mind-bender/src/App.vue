@@ -31,7 +31,7 @@ import ThemeSelector from './components/ThemeSelector.vue'
               </v-list>
             </v-menu>
 
-            <ThemeSelector/>
+            <ThemeSelector />
           </v-toolbar>
         </v-card>
       </v-col>
