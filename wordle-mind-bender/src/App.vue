@@ -1,17 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { ref } from 'vue'
-import { useTheme } from 'vuetify'
 import ThemeSelector from './components/ThemeSelector.vue'
-
-const theme = useTheme()
-const myThemes = ['light', 'dark', 'dark_night', 'zesty_citrus']
-const selectedTheme = ref(myThemes[0])
-
-const setTheme = () => {
-  theme.global.name.value = selectedTheme.value
-  console.log(selectedTheme.value)
-}
 </script>
 
 <template>
@@ -42,11 +31,7 @@ const setTheme = () => {
               </v-list>
             </v-menu>
 
-            <ThemeSelector
-              :selectedTheme="selectedTheme"
-              :themeList="myThemes"
-              @setTheme="setTheme()"
-            />
+            <ThemeSelector/>
           </v-toolbar>
         </v-card>
       </v-col>
