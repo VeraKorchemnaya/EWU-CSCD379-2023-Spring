@@ -9,8 +9,8 @@ import ThemeSelector from './components/ThemeSelector.vue'
       <v-col class="pa-0">
         <v-toolbar density="compact" class="elevation-4">
           <v-toolbar-title style="cursor: pointer" @click="$router.push('/')">
-            <v-icon icon="mdi-gamepad-square" class="mx-1" color="teal"></v-icon> 
-            Wordle Mind Bender 
+            <v-icon icon="mdi-gamepad-square" class="mx-1" color="teal"></v-icon>
+            Wordle Mind Bender
           </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-menu location="bottom">

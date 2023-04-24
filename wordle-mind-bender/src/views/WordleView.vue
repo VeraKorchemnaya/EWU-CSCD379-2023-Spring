@@ -8,7 +8,9 @@
       <AvailableWords></AvailableWords>
     </v-col>
     <v-col cols="auto">
-      <v-btn @click="checkGuess" color="teal" style="background-image: var(--btn-gradient)"> Check </v-btn>
+      <v-btn @click="checkGuess" color="teal" style="background-image: var(--btn-gradient)">
+        Check
+      </v-btn>
     </v-col>
     <v-col cols="auto">
       <v-btn @click="deleteChar" color="teal" style="background-image: var(--btn-gradient)">
@@ -16,7 +18,9 @@
       </v-btn>
     </v-col>
     <v-col cols="auto">
-      <v-btn color="teal" style="background-image: var(--btn-gradient)" variant="tonal"> {{ game.secretWord }} </v-btn>
+      <v-btn color="teal" style="background-image: var(--btn-gradient)" variant="tonal">
+        {{ game.secretWord }}
+      </v-btn>
     </v-col>
   </v-row>
 </template>
@@ -69,6 +73,4 @@ function keyPress(event: KeyboardEvent) {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
