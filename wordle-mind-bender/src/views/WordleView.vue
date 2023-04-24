@@ -70,6 +70,7 @@ function checkGuess() {
 
 function deleteChar() {
   game.guess.pop()
+  guess.value = guess.value.slice(0, -1)
 }
 
 function addChar(letter: Letter) {
