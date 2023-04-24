@@ -12,7 +12,7 @@ describe('LetterBase', () => {
 
   it('renders properly with passed params', () => {
     const wrapper = mount(LetterBase, { props: { char: 'a', color: 'blue' } })
-    expect(wrapper.text()).toContain('a')
+    expect(wrapper.text()).toContain('A')
     expect(wrapper.attributes('color')).toBe('blue')
   })
 })

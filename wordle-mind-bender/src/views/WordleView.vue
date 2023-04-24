@@ -62,8 +62,10 @@ onUnmounted(() => {
 })
 
 function checkGuess() {
-  game.submitGuess()
-  guess.value = ''
+  if (guess.value.length == game.secretWord.length) {
+    game.submitGuess()
+    guess.value = ''
+  }
 }
 
 function deleteChar() {
@@ -71,8 +73,10 @@ function deleteChar() {
 }
 
 function addChar(letter: Letter) {
-  game.guess.push(letter.char)
-  guess.value += letter.char
+  if (guess.value.length < game.secretWord.length) {
+    game.guess.push(letter.char)
+    guess.value += letter.char
+  }
 }
 
 function keyPress(event: KeyboardEvent) {
@@ -83,7 +87,11 @@ function keyPress(event: KeyboardEvent) {
     guess.value = guess.value.slice(0, -1)
     game.guess.pop()
     console.log('Back')
-  } else if (event.key.length === 1 && event.key !== ' ') {
+  } else if (
+    event.key.length === 1 &&
+    event.key !== ' ' &&
+    guess.value.length < game.secretWord.length
+  ) {
     guess.value += event.key.toLowerCase()
     game.guess.push(event.key.toLowerCase())
   }
