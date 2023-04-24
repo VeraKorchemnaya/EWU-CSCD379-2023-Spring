@@ -4,8 +4,9 @@
       <LetterButton
         :letter="letter"
         @click="letterClick(letter)"
-        class="elevation-0 text-h5 font-weight-black rounded-0"
+        class="elevation-0 text-h5 font-weight-black rounded-sm"
         height="4rem"
+        style="pointer-events: none"
       />
     </v-col>
   </v-row>

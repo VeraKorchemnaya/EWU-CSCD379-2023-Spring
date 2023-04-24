@@ -2,7 +2,7 @@
 
 <template>
   <main>
-    <v-card class="mx-auto">
+    <v-card class="mx-auto elevation-3">
       <v-card-title>Wor·dle</v-card-title>
       <v-card-text>
         Five letters, a mystery to unfold, <br />
