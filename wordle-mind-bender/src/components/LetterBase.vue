@@ -1,24 +1,16 @@
 <template>
-  <v-btn
-    :style="{
-      'background-color': theme.global.current.value.colors[props.color],
-      'background-image': 'var(--btn-gradient)'
-    }"
-  >
+  <v-btn :color="props.color" :style="{ 'background-image': 'var(--btn-gradient) !important' }">
     {{ props.char }}
   </v-btn>
 </template>
 
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import { withDefaults } from 'vue'
+import { defineProps, withDefaults } from 'vue'
 
 export interface Props {
   char?: string
   color?: string
 }
-
-const theme = useTheme()
 
 const props = withDefaults(defineProps<Props>(), {
   char: '?',

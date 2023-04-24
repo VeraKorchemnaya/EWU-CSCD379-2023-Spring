@@ -1,28 +1,45 @@
 <template>
-  <GameBoard :game="game" @letterClick="addChar" />
+  <main>
+    <GameBoard :game="game" @letterClick="addChar" />
 
-  <KeyBoard @letterClick="addChar" :guessedLetters="game.guessedLetters" />
+    <KeyBoard @letterClick="addChar" :guessedLetters="game.guessedLetters" />
 
-  <v-row dense class="justify-center" cols="auto">
-    <v-col cols="auto">
-      <AvailableWords></AvailableWords>
-    </v-col>
-    <v-col cols="auto">
-      <v-btn @click="checkGuess" color="teal" style="background-image: var(--btn-gradient)">
-        Check
-      </v-btn>
-    </v-col>
-    <v-col cols="auto">
-      <v-btn @click="deleteChar" color="teal" style="background-image: var(--btn-gradient)">
-        <v-icon icon="mdi-backspace"></v-icon>
-      </v-btn>
-    </v-col>
-    <v-col cols="auto">
-      <v-btn color="teal" style="background-image: var(--btn-gradient)" variant="tonal">
-        {{ game.secretWord }}
-      </v-btn>
-    </v-col>
-  </v-row>
+    <v-row dense class="justify-center" cols="auto">
+      <v-col cols="auto">
+        <AvailableWords></AvailableWords>
+      </v-col>
+      <v-col cols="auto">
+        <v-btn
+          @click="checkGuess"
+          color="teal"
+          style="background-image: var(--btn-gradient)"
+          class="elevation-7"
+        >
+          Check
+        </v-btn>
+      </v-col>
+      <v-col cols="auto">
+        <v-btn
+          @click="deleteChar"
+          color="teal"
+          style="background-image: var(--btn-gradient)"
+          class="elevation-7"
+        >
+          <v-icon icon="mdi-backspace"></v-icon>
+        </v-btn>
+      </v-col>
+      <v-col cols="auto">
+        <v-btn
+          color="teal"
+          style="background-image: var(--btn-gradient)"
+          variant="tonal"
+          class="elevation-7"
+        >
+          {{ game.secretWord }}
+        </v-btn>
+      </v-col>
+    </v-row>
+  </main>
 </template>
 
 <script setup lang="ts">

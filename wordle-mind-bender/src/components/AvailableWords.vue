@@ -1,7 +1,11 @@
 <template>
   <v-dialog transition="dialog-bottom-transition">
     <template v-slot:activator="{ props }">
-      <v-btn color="teal" v-bind="props" style="background-image: var(--btn-gradient)"
+      <v-btn
+        color="teal"
+        v-bind="props"
+        style="background-image: var(--btn-gradient)"
+        class="elevation-7"
         >Available Words</v-btn
       >
     </template>
