@@ -11,13 +11,14 @@
 
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import { defineProps, withDefaults } from 'vue'
-const theme = useTheme()
+import { withDefaults } from 'vue'
 
 export interface Props {
   char?: string
   color?: string
 }
+
+const theme = useTheme()
 
 const props = withDefaults(defineProps<Props>(), {
   char: '?',
