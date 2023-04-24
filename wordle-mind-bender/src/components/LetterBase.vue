@@ -1,6 +1,6 @@
 <template>
   <v-btn :color="props.color" :style="{ 'background-image': 'var(--btn-gradient) !important' }">
-    {{ props.char }}
+    {{ props.char.toUpperCase() }}
   </v-btn>
 </template>
 
