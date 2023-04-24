@@ -4,6 +4,7 @@ import router from './router'
 import { mdi } from 'vuetify/iconsets/mdi'
 
 import '@mdi/font/css/materialdesignicons.css'
+import './assets/main.css'
 
 // Vuetify
 import 'vuetify/styles'
@@ -44,6 +45,7 @@ const OceanMist = {
 const OceanMistDark = {
   dark: true,
   colors: {
+      background: 'red',
     correct: '#032dff',
     misplaced: '#1683f7',
     wrong: '#5c86ab',
@@ -61,7 +63,7 @@ const vuetify = createVuetify({
     }
   },
   theme: {
-    defaultTheme: 'dark',
+      defaultTheme: 'light',
     themes: {
       MossyWoodland,
       MossyWoodlandLight,
@@ -72,8 +74,9 @@ const vuetify = createVuetify({
           correct: '#4CAF50',
           misplaced: '#FFC107',
           wrong: '#F44336',
-          notGuessed: '#9E9E9E'
-        }
+              notGuessed: '#9E9E9E',
+              background: '#212121'
+          }
       },
       light: {
         colors: {

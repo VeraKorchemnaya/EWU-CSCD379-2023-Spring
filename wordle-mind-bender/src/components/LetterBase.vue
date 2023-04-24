@@ -2,7 +2,7 @@
   <v-btn
     :style="{
       'background-color': theme.global.current.value.colors[props.color],
-      'background-image': 'linear-gradient(315deg, #00000040, #FFFFFF40)'
+      'background-image': 'var(--btn-gradient)'
     }"
   >
     {{ props.char }}

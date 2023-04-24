@@ -3,9 +3,22 @@
 
   <KeyBoard @letterClick="addChar" :guessedLetters="game.guessedLetters" />
 
-  <h3>{{ game.secretWord }}</h3>
-
-  <AvailableWords></AvailableWords>
+  <v-row dense class="justify-center" cols="auto">
+    <v-col cols="auto">
+      <AvailableWords></AvailableWords>
+    </v-col>
+    <v-col cols="auto">
+      <v-btn @click="checkGuess" color="teal" style="background-image: var(--btn-gradient)"> Check </v-btn>
+    </v-col>
+    <v-col cols="auto">
+      <v-btn @click="deleteChar" color="teal" style="background-image: var(--btn-gradient)">
+        <v-icon icon="mdi-backspace"></v-icon>
+      </v-btn>
+    </v-col>
+    <v-col cols="auto">
+      <v-btn color="teal" style="background-image: var(--btn-gradient)" variant="tonal"> {{ game.secretWord }} </v-btn>
+    </v-col>
+  </v-row>
 </template>
 
 <script setup lang="ts">
@@ -32,6 +45,10 @@ function checkGuess() {
   guess.value = ''
 }
 
+function deleteChar() {
+  game.guess.pop()
+}
+
 function addChar(letter: Letter) {
   game.guess.push(letter.char)
   guess.value += letter.char
@@ -51,3 +68,7 @@ function keyPress(event: KeyboardEvent) {
   }
 }
 </script>
+
+<style>
+
+</style>
