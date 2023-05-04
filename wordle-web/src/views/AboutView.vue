@@ -12,5 +12,28 @@
         <v-btn color="teal" variant="tonal" @click="$router.go(-1)">Back</v-btn>
       </v-card-actions>
     </v-card>
+    <div v-for="item in weatherData" :key="item.date">
+      {{ item.date }}: {{ item.temperatureC }}C, {{ item.temperatureF }}F, {{ item.summary }}
+    </div>
   </main>
 </template>
+<script setup lang="ts">
+import Axios from 'axios'
+import { ref } from 'vue'
+
+interface WeatherData {
+  date: string
+  temperatureC: number
+  temperatureF: number
+  summary: string
+}
+
+const weatherData = ref<WeatherData[]>()
+
+Axios.get('https://localhost:7118/WeatherForecast')
+  .then((response) => {
+    console.log(response.data)
+    weatherData.value = response.data
+  })
+  .catch((err) => console.log(err))
+</script>
